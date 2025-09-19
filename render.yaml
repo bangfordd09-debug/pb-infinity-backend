@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: pb-infinity-backend
+    env: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    envVars:
+      - key: PUBLIC_BASE_URL
+        value: https://RENDER_BACKEND_URL
+    disk:
+      name: uploads
+      mountPath: /opt/render/project/src/uploads
+      sizeGB: 1

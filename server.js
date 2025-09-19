@@ -21,6 +21,11 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
+// ✅ Root route
+app.get("/", (req, res) => {
+  res.send("PB Infinity Backend is Live 🚀");
+});
+
 // ✅ Health check route
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok" });
